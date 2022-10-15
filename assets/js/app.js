@@ -1,5 +1,43 @@
+const swiperEducation = new Swiper(".single-gallery-slider", {
+    slidesPerView: '2',
+    spaceBetween: 20,
+    pagination: {
+        el: ".single-gallery-panel-pagination",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".single-gallery-panel__next",
+        prevEl: ".single-gallery-panel__prev",
+    }
+});
+const swiperSaidbar = new Swiper(".single-saidbar-still-slider", {
+    slidesPerView: '1',
+    effect: 'fade',
+    fadeEffect: {
+        crossFade: true,
+    },
+    pagination: {
+        el: ".single-saidbar-still-panel-pagination",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".single-saidbar-still-panel__next",
+        prevEl: ".single-saidbar-still-panel__prev",
+    }
+});
 // jQuery function
 $(document).ready(function() {
+    // Акордеон в faq
+    function accordionFaq() {
+        $(".single-program-item-head").click(function(){
+            $(this).toggleClass("open").next().slideToggle();
+            $(".single-program-item-head").not(this).removeClass("open").next().slideUp();
+        });
+    };
+    accordionFaq();
+
+
+
     //hidden input 
     function hiddenField () {
         $('._field').find('.job-checkbox').click(function () {
@@ -41,17 +79,7 @@ $(document).ready(function() {
     openModal()
 
 
-    function accordion() {
-        $(".accordion").click(function () {
-            $(this).toggleClass("open").next().slideToggle();
-            //$(".accordion").not(this).removeClass("open").next().slideUp();
-            $(".accordion").parent().parent().find('.main-search-select-item').removeClass('active');
-            $(this).parent().addClass('active');
-            console.log($(".accordion").parent().parent().find('.select-item-title'))
-        });
-    };
-    accordion();
-    // ShowMobile 
+
     function showMobile () {
         $('.result-item-other-bottom__link').click(function () {
             $(this).parent().addClass('show');
