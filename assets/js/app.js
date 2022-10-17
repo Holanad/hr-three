@@ -8,7 +8,7 @@ const swiperEducation = new Swiper(".single-gallery-slider", {
     navigation: {
         nextEl: ".single-gallery-panel__next",
         prevEl: ".single-gallery-panel__prev",
-    }
+    },
 });
 const swiperSaidbar = new Swiper(".single-saidbar-still-slider", {
     slidesPerView: '1',
@@ -25,6 +25,132 @@ const swiperSaidbar = new Swiper(".single-saidbar-still-slider", {
         prevEl: ".single-saidbar-still-panel__prev",
     }
 });
+const swiperMain = new Swiper(".about-main-inner", {
+    enabled: false,
+    slidesPerView: 'auto',
+    freeMode: true,
+    grabCursor: true,
+    pagination: {
+        el: ".about-main-progressbar .progress",
+        type: "progressbar",
+    },
+    breakpoints: {
+      768: {
+        enabled: false,
+      },
+      320: {
+        enabled: true,
+
+      },
+    },
+});
+const sliderMain = () => {
+    let countSlide = document.querySelectorAll('.about-main-item').length;
+    let recallItemCount = document.querySelector('.about-main-progressbar .all');
+    if(recallItemCount === null) {
+        return 0;
+    } else {
+        if (countSlide <= 9) {
+            recallItemCount.innerHTML = '0' + countSlide;
+        } else {
+            recallItemCount.innerHTML = countSlide;
+        }
+    }
+    setInterval(() => {
+        if($('.about-main-item:last-child').hasClass('swiper-slide-active')) {
+            $('.about-main-progressbar .all').addClass('full')
+        } else {
+            $('.about-main-progressbar .all').removeClass('full')
+        }
+       
+    }, 100);
+};
+sliderMain();
+
+const swiperComm = new Swiper(".comm-info-block", {
+    enabled: false,
+    slidesPerView: 'auto',
+    freeMode: true,
+    grabCursor: true,
+    pagination: {
+        el: ".comm-info-block .progress",
+        type: "progressbar",
+    },
+    breakpoints: {
+      1240: {
+        enabled: false,
+      },
+      320: {
+        enabled: true,
+
+      },
+    },
+});
+const sliderComm = () => {
+    let countSlide = document.querySelectorAll('.comm-info__descr').length;
+    let recallItemCount = document.querySelector('.comm-info-block .all');
+    if(recallItemCount === null) {
+        return 0;
+    } else {
+        if (countSlide <= 9) {
+            recallItemCount.innerHTML = '0' + countSlide;
+        } else {
+            recallItemCount.innerHTML = countSlide;
+        }
+    }
+    setInterval(() => {
+        if($('.comm-info__descr:last-child').hasClass('swiper-slide-active')) {
+            $('.comm-info-block .all').addClass('full')
+        } else {
+            $('.comm-info-block .all').removeClass('full')
+        }
+       
+    }, 100);
+};
+sliderComm();
+
+const swiperAccents = new Swiper(".single-accent-block", {
+    enabled: false,
+    slidesPerView: 'auto',
+    freeMode: true,
+    grabCursor: true,
+    pagination: {
+        el: ".single-accent-progressbar .progress",
+        type: "progressbar",
+    },
+    breakpoints: {
+      768: {
+        enabled: false,
+      },
+      320: {
+        enabled: true,
+      },
+    },
+});
+
+const sliderAccent = () => {
+    let countSlide = document.querySelectorAll('.single-accent-item').length;
+    let recallItemCount = document.querySelector('.single-accent-block .all');
+    if(recallItemCount === null) {
+        return 0;
+    } else {
+        if (countSlide <= 9) {
+            recallItemCount.innerHTML = '0' + countSlide;
+        } else {
+            recallItemCount.innerHTML = countSlide;
+        }
+    }
+    setInterval(() => {
+        if($('.single-accent-item:last-child').hasClass('swiper-slide-active')) {
+            $('.single-accent-block .all').addClass('full')
+        } else {
+            $('.single-accent-block .all').removeClass('full')
+        }
+       
+    }, 100);
+};
+sliderAccent();
+
 // jQuery function
 $(document).ready(function() {
     // Акордеон в faq
@@ -35,6 +161,19 @@ $(document).ready(function() {
         });
     };
     accordionFaq();
+    // Уведомления
+    function notification() {
+        $('.header-profile-notification').click(function() {
+            $('.header-notification').toggleClass('active');
+        })
+    };
+    notification();
+    $(document).mouseup(function (e) {
+        var container = $(".header-notification, .header-profile-notification");
+        if (!container.is(e.target) && container.has(e.target).length === 0) {
+            $('.header-notification').removeClass('active');
+        }
+    });
 
 
 

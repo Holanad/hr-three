@@ -140,7 +140,7 @@
         visibility: hidden;
         transition: $anim-default;
         z-index: 5;
-        width: max-content;
+        width: 285px;
         &.active {
             opacity: 1;
             pointer-events: all;
@@ -154,7 +154,7 @@
         color: #242424;
         font-size: 16px;
         line-height: 100%;
-        padding: 10px 35px;
+        padding: 10px 20px;
         width: max-content;
         transition: $anim-default;
         width: 100%;
