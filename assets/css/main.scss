@@ -516,6 +516,21 @@ input::placeholder, textarea::placeholder {
     &__password {
         margin-top: 40px;
     }
+    &-password {
+        &-change {
+            display: none;
+            width: 100%;
+            margin-top: 20px;
+            .elem-form {
+                &:last-child {
+                    margin-right: 0 !important;
+                }
+            }
+            &.open {
+                display: flex;
+            }
+        }
+    }
     &-saidbar {
         width: 404px;
         &__title {
@@ -602,8 +617,8 @@ input::placeholder, textarea::placeholder {
         }
         &-image {
             border-radius: 60px;
-            width: 97px;
-            height: 97px;
+            width: 126px;
+            height: 126px;
             position: relative;
             overflow: hidden;
             background: #5B8AC6;
@@ -703,6 +718,21 @@ input::placeholder, textarea::placeholder {
                     &:hover {
                         background: #5B8AC6;
                         color: #fff;
+                    }
+                }
+            }
+            &-btns {
+                .elem-form {
+                    display: none;
+                    margin-bottom: 20px;
+                    width: 100% !important;
+                    &:last-child {
+                        margin-right: 0 !important;
+                    }
+                }
+                .team-member, .team-invite {
+                    &.open {
+                        display: block;
                     }
                 }
             }
@@ -956,6 +986,11 @@ input::placeholder, textarea::placeholder {
         }
         &__btn {
             width: 100%;
+            &:nth-child(5) {
+                padding: 15px;
+                border-radius: 14px;
+                margin-top: 15px;
+            }
         }
         &-background {
             padding: 52px;
@@ -1098,6 +1133,16 @@ input::placeholder, textarea::placeholder {
 }
 
 .vacancy {
+    &__recomend {
+        font-family: 'Gilroy Semibold';
+        font-size: 18px;
+        margin-top: 10px;
+        span {
+            font-family: 'Gilroy Semibold';
+        font-size: 18px;
+            color: #5B8AC6;
+        }
+    }
     &-wrapper {
         padding: 120px 0;
     }
@@ -1191,6 +1236,7 @@ input::placeholder, textarea::placeholder {
         width: 794px;
     }
     &-main {
+        margin-bottom: 50px;
         .single__title {
             margin-bottom: 30px;
         }
@@ -1235,6 +1281,7 @@ input::placeholder, textarea::placeholder {
         color: #5B8AC6;
         font-size: 14px;
         line-height: 140%;
+        margin-bottom: 50px;
     }
     &__subtitle {
         font-size: 17px;
@@ -1461,6 +1508,7 @@ input::placeholder, textarea::placeholder {
         }
     }
     &-common {
+        margin-bottom: 50px;
         &-list {
             flex-wrap: wrap;
         }
@@ -2029,19 +2077,26 @@ input::placeholder, textarea::placeholder {
         padding: 120px 0;
     }
     &-list {
-        flex-wrap: wrap;
+        //flex-wrap: wrap;
+    }
+    &-panel {
+        margin-top: 50px;
+        &-pagination {
+            width: fit-content !important;
+            margin: 0 20px;
+        }
     }
     &-item {
         width: 154px;
         position: relative;
         height: 31px;
         margin-bottom: auto;
-        &:not(:nth-child(6n + 6)) {
+      /*  &:not(:nth-child(6n + 6)) {
             margin-right: 55px;
         }
         &:not(:nth-last-child(-n + 6)) {
             margin-bottom: 40px;
-        }
+        }*/
         img {
             &:nth-child(2) {
                 position: absolute;
@@ -2119,6 +2174,26 @@ input::placeholder, textarea::placeholder {
         left: 50%;
         transform: translateX(-50%);
         z-index: -1;
+    }
+}
+.about {
+    &.news {
+        .news-list {
+            flex-wrap: nowrap;
+            margin-top: 0;
+        }
+        .news-panel {
+            &-pagination {
+                width: fit-content;
+                margin: 0 20px;
+            }
+            button {
+                transition: $anim-default;
+                &.swiper-button-disabled {
+                    opacity: 0.5;
+                }
+            }
+        }
     }
 }
 .chat {

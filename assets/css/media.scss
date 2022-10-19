@@ -86,9 +86,9 @@
             &:not(:nth-last-child(-n + 6)) {
                 margin-bottom: 0;
             }
-            &:not(:nth-last-child(5n + 5)) {
+           /* &:not(:nth-last-child(5n + 5)) {
                 margin-bottom: 30px;
-            }
+            }*/
         }
     }
     .about-application {
@@ -929,6 +929,13 @@
         &-progressbar {
             display: flex;
             margin-top: 60px;
+        }
+    }
+    .about {
+        &.news {
+            .news-item {
+                min-height: 343px;
+            }
         }
     }
     .about-application {

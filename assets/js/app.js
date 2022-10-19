@@ -1,3 +1,52 @@
+const swiperNews = new Swiper(".news-inner", {
+    slidesPerView: '3',
+    spaceBetween: 20,
+    pagination: {
+        el: ".news-panel-pagination",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".news-panel__next",
+        prevEl: ".news-panel__prev",
+    },
+    breakpoints: {
+        992: {
+            slidesPerView: '3',
+        },
+        768: {
+            slidesPerView: '2',
+        },
+        320: {
+            slidesPerView: '1',
+        },
+    },
+});
+const swiperPartners = new Swiper(".work-inner", {
+    slidesPerView: '6',
+    spaceBetween: 20,
+    pagination: {
+        el: ".work-panel-pagination",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".work-panel__next",
+        prevEl: ".work-panel__prev",
+    },
+    breakpoints: {
+        992: {
+            slidesPerView: '6',
+        },
+        768: {
+            slidesPerView: '5',
+        },
+        576: {
+            slidesPerView: '3',
+        },
+        320: {
+            slidesPerView: '2',
+        },
+    },
+});
 const swiperEducation = new Swiper(".single-gallery-slider", {
     slidesPerView: '2',
     spaceBetween: 20,
@@ -153,6 +202,23 @@ sliderAccent();
 
 // jQuery function
 $(document).ready(function() {
+    // changepass
+    function changePassword () {
+        $('.main__password').click(function() {
+            $('.main-password-change').addClass('open');
+        })
+    }
+    changePassword()
+    // teamadd
+    function teamAdd () {
+        $('.team-invite-btn').click(function() {
+            $('.team-invite').addClass('open');
+        })
+        $('.team-member-btn').click(function() {
+            $('.team-member').addClass('open');
+        })
+    }
+    teamAdd()
     // Акордеон в faq
     function accordionFaq() {
         $(".single-program-item-head").click(function(){
