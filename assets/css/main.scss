@@ -1139,7 +1139,7 @@ input::placeholder, textarea::placeholder {
         margin-top: 10px;
         span {
             font-family: 'Gilroy Semibold';
-        font-size: 18px;
+            font-size: 18px;
             color: #5B8AC6;
         }
     }
@@ -2076,21 +2076,27 @@ input::placeholder, textarea::placeholder {
     &-wrapper {
         padding: 120px 0;
     }
+    .swiper-grid-column>.swiper-wrapper {
+        flex-direction: row !important;
+    }
     &-list {
         //flex-wrap: wrap;
     }
     &-panel {
-        margin-top: 50px;
+        margin-top: 30px;
         &-pagination {
             width: fit-content !important;
             margin: 0 20px;
         }
     }
     &-item {
+        margin-bottom: 20px;
         width: 154px;
         position: relative;
         height: 31px;
-        margin-bottom: auto;
+        &:nth-child(even) {
+            margin-top: 0 !important;
+        }
       /*  &:not(:nth-child(6n + 6)) {
             margin-right: 55px;
         }

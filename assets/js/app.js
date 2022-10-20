@@ -23,6 +23,7 @@ const swiperNews = new Swiper(".news-inner", {
 });
 const swiperPartners = new Swiper(".work-inner", {
     slidesPerView: '6',
+    slidesPerGroup: 6,
     spaceBetween: 20,
     pagination: {
         el: ".work-panel-pagination",
@@ -32,18 +33,42 @@ const swiperPartners = new Swiper(".work-inner", {
         nextEl: ".work-panel__next",
         prevEl: ".work-panel__prev",
     },
+
+    grid: {
+        rows: 2,
+    },
     breakpoints: {
         992: {
+            spaceBetween: 20,
             slidesPerView: '6',
+            slidesPerGroup: 6,
+            grid: {
+                rows: 2,
+            },
         },
         768: {
-            slidesPerView: '5',
+            spaceBetween: 20,
+            slidesPerView: '4',
+            slidesPerGroup: 4,
+            grid: {
+                rows: 2,
+            },
         },
         576: {
+            spaceBetween: 0,
+            grid: {
+                rows: 4,
+            },
             slidesPerView: '3',
+            slidesPerGroup: 3,
         },
         320: {
+            spaceBetween: 0,
+            grid: {
+                rows: 6,
+            },
             slidesPerView: '2',
+            slidesPerGroup: 2,
         },
     },
 });

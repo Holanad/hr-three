@@ -3386,8 +3386,15 @@ input::placeholder, textarea::placeholder {
   padding: 120px 0;
 }
 
+.work .swiper-grid-column > .swiper-wrapper {
+  -webkit-box-orient: horizontal !important;
+  -webkit-box-direction: normal !important;
+      -ms-flex-direction: row !important;
+          flex-direction: row !important;
+}
+
 .work-panel {
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .work-panel-pagination {
@@ -3398,16 +3405,20 @@ input::placeholder, textarea::placeholder {
 }
 
 .work-item {
+  margin-bottom: 20px;
   width: 154px;
   position: relative;
   height: 31px;
-  margin-bottom: auto;
   /*  &:not(:nth-child(6n + 6)) {
             margin-right: 55px;
         }
         &:not(:nth-last-child(-n + 6)) {
             margin-bottom: 40px;
         }*/
+}
+
+.work-item:nth-child(even) {
+  margin-top: 0 !important;
 }
 
 .work-item img:nth-child(2) {
